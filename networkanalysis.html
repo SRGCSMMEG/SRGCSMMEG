@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--Required element for HTML files-->
+<html lang="en-US">
+<!--Language and country listed for search engines-->
+    <head>
+    <!--Container for Metadata-->
+        <title>Network Analysis</title>  
+        <!--Displays on browser tab. This is a required element-->
+        <meta charset="UTF-8">
+        <!--Metadata defining character set used-->
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <!--Metadata indicating coding languages used-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Provides scalability for users viewing on different devices-->
+        <meta name="description" content="Project for profile">
+        <!--Metadata describing the website for the assistance of search engines-->
+        <meta name="author" content="Starr Rhiannon Gibson">
+        <!--Metadata providing authorship for the file-->
+        <link rel="stylesheet" href="css/port.css">
+        <link rel="stylesheet" href="css/fontawesome.css">
+        <!--External CSS files defining aesthetic of website-->
+        <script src="https://kit.fontawesome.com/427e1b2647.js" crossorigin="anonymous"></script>
+        <!--My unique Font Awesome Kit-->  
+        <style>
+            table {
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 10px;
+              }
+        </style>
+        <!--Formats this particular page's table separate from the css files-->
+    </head>
+    <body>
+    <!--Container for all visible elements-->
+        <nav>
+            <div id="title" style="padding: 15px">Skills Demonstrations</div>
+            <ul>
+                <li><a href="statement.html" title="Professional Statement"><i class="fa-solid fa-file fa-2xl"></i></a></li>
+                <li><a href="starrship.html" title="StarrShip"><i class="fa-solid fa-rocket fa-2xl"></i></a></li>
+                <li><a href="securityaudit.html" title="Security Audit" target="iframe_a"><i class="fa-solid fa-shield-halved fa-2xl"></i></a></li>
+                <li><a href="networkanalysis.html" title="Network Analysis" class="active" style="color: black;" target="iframe_a"><i class="fa-solid fa-server fa-2xl"></i></a></li>
+               <!-- <li><a href="linuxpermissions.html" title="Linux Permissions" target="iframe_a"><i class="fa-brands fa-linux fa-2xl" title="Linux"></i></a></li>
+                <li><a href="mylab.html" title="My Lab" target="iframe_a"><i class="fa-solid fa-computer fa-2xl"></i></a></li>
+               -->
+            </ul>
+        </nav>
+        <div style="float: right; padding-top: 20px; padding-right: 20px; a:visited { color: grey}">
+            <a href="networkanalysis.html" title="open in new window" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square fa-2xl" style="color: grey"></i></a>
+        </div>
+        <div style="padding: 15px">
+            <h2 style="text-align: center; color: #282f37">Incident Report Anaylsis</h2>
+            <h3 style="text-align: center; color: #99B5D2">Skills: Network Architecture, TCP/IP, Network Security, NIST CSF</h3>
+            <h4 style="text-align: center; color: black;">Scenario</h4>
+            <blockquote style="text-align: justify; background-color:#D1B4A3">
+                <p class="ind">My role is as a cybersecurity analyst working for a multimedia company that offers web design services, graphic design, and social media marketing solutions to small businesses The organization recently experienced a DDoS attack, which compromised the internal network for two hours until it was resolved. During the attack, the organization's network services suddenly stopped responding due to an incoming flood of ICMP packets. Normal internal network traffic could not access any network resources. The incident management team responded by blocking incoming ICMP packets, stopping all non-critical network services offline, and restoring critical network services.</p>
+                <p class="ind">The company's cybersecurity team investigated the security event and found a malicious actor had sent a flood of ICMP pings into the company's network through an unconfigured firewall. This vulnerability allowed the malicious attacker to overwhelm the company's network through a distributed denial of service (DDoS) attack.</p>
+                <p class="ind">As a cybersecurity analyst, I am tasked with using this security event to create a plan to improve the company’s network security, following the National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF). I will use the CSF to help navigate through the different steps of analyzing this cybersecurity incident and integrate my analysis into a general security strategy</p>
+            </blockquote>
+            <table style="width: 80%;">
+                <tr>
+                    <td><strong>Summary</strong></td>
+                    <td>All network services stopped responding during a security event. The team found the disruption was caused by a DDoS (distributed denial of services) attack. The team blocked the attack and stopped all non-critical network services.</td>
+                </tr>
+                <tr>
+                    <td><strong>Identify</strong></td>
+                    <td>The company was targeted with an ICMP flood attack. The entire internal network was affected for 2 hours. All critical network resources needed to be restored.</td>
+                </tr>
+                <tr>
+                    <td><strong>Protect</strong></td>
+                    <td>A new firewall rule was implemented to limit the rate of ICMP packets incoming and an IDS/IPS system filtering out suspicious ICMP traffic.</td>
+                </tr>
+                <tr>
+                    <td><strong>Detect</strong></td>
+                    <td>The cybersecurity team configured source IP address verification to check for spoofed IP addresses on incoming ICMP packets. They also implemented network monitoring software to detect abnormal traffic patterns.</td>
+                </tr>
+                <tr>
+                    <td><strong>Respond</strong></td>
+                    <td>The cybersecurity team will isolate affected systems to prevent further disruptions. They will attempt to restore any critical systems and services disrupted by the event. And they will analyze network logs to check for suspicious and abnormal activity. All incidents will be reported to upper management and legal authorities as applicable.</td>
+                </tr>
+                <tr>
+                    <td><strong>Recover</strong></td>
+                    <td>To recover from the DDoS attack, the network needs to be restored to normal functions.  First, non-critical network services should be stopped to reduce network traffic. Critical network services should be restored first to ensure consistency of services. A firewall can block future ICMP flood attacks and should be installed/configured. Last, once the packets from the attack have timed out, all non-critical systems can be restored.</td>
+                </tr>
+            </table>
+        </div> 
+    </body>
+</html>
