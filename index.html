@@ -1,7 +1,115 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<!--Required element for HTML files-->
+<html lang="en-US">
+<!--Language and country listed for search engines-->
+    <head>
+    <!--Container for Metadata-->
+        <title>S. R. Gibson</title>
+        <!--Displays on browser tab. This is a required element-->
+        <meta charset="UTF-8">
+        <!--Metadata defining character set used-->
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <!--Metadata indicating coding languages used-->
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <!--Provides scalability for users viewing on different devices--> 
+        <meta name="description" content="Professional Portfolio">
+        <!--Metadata describing the website for search engines-->
+        <meta name="author" content="Starr Rhiannon Gibson">
+        <!--Metadata providing authorship for the file--> 
+        <link rel="stylesheet" href="css/port.css">
+        <link rel="stylesheet" href="css/fontawesome.css">
+        <!--External CSS files defining aesthetic of website-->
+        <script src="https://kit.fontawesome.com/427e1b2647.js" crossorigin="anonymous"></script>
+        <!--My unique Font Awesome kit-->
+    </head>
+    <body>
+    <!--Container for all visible elements-->
+        <header>
+        <!--Header element to create a banner at the top of the page-->
+            <h1>Starr Rhiannon Gibson</h1>
+            <p>Cybersecurity Professional | Genealogist | Student</p>
+        </header>
+        <nav>
+        <!--Link navigation to profiles and my resume in PDF form-->
+            <ul>
+                <li><a href="contact@starrgibson.tech" title="Contact via email"><i class="fa-regular fa-at fa-2xl color: #99B5D2"></i></a></li>
+                <!--Special domain email-->
+                <li><a href="https://www.linkedin.com/in/starrrhiannon/" title="LinkedIn Profile" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a></li>
+                <!--Link to LinkedIn profile-->
+                <li><a href="https://www.salesforce.com/trailblazer/starrgibson" title="Salesforce Trailhead Profile" target="_blank"><i class="fa-brands fa-salesforce fa-2xl"></i></a></li>
+                <!--Link to Salesforce Trailblazer profile-->
+                <li><a href="https://github.com/SRGCSMMEG" title="GitHub Profile" target="_blank"><i class="fa-brands fa-square-github fa-2xl"></i></a></li>
+                <!--Link to GitHub profile-->
+                <li><a href="https://www.coursera.org/user/a28d96b4935198935827ac5e565e24cc" title="Coursera Profile" target="_blank"><i class="fa-solid fa-user fa-2xl"></i></a></li>
+                <!--Link to Coursera profile-->
+                <li><a href="files/Starr Gibson Port Resume.pdf" title="Download Resume" download=""><i class="fa-solid fa-cloud-arrow-down fa-2xl"></i></a></li>
+                <!--Download link for resume formatted to match this website-->
+            </ul>
+        </nav>
+        <div class="row flex-container">
+        <!--Flex container to ensure following columns keep the same height when viewed on computer-->
+            <div id="aboutme" class="box left">
+            <!--Left hand column that will carry my profile photo, About Me summary and skills icons-->
+                <img src="images/Profile Photo 1.png" alt="Profile Photo" title="Profile Photo" height="200" width="200" style="float: center; padding: 15px; border-radius: 50%">
+                <!--Profile photo NEEDS TO BE UPDATED-->
+                <h3 style="text-align: center;">About Me</h3>
+                    <p class="ind">
+                    I am a student at Sothern New Hampshire University, currently pursuing my master's degree in cybersecurity. I am comfortable with no-code development, but I am working on my coding skills. When not honing my computer skills, I am volunteering my time for family history research.
+                    </p>
+                <!--Summary NEEDS TO BE UPDATED-->
+                <h3 style="text-align: center;">Technical Skills</h3>
+                <!--Table listing my skills provable through projects-->
+                    <table style="background-color: rgba(247, 247, 248, 0.60); padding: 10px; border-radius: 5%">
+                        <tr>
+                            <td><i class="fa-brands fa-html5 fa-2xl" title="HTML5"></td>  
+                            <td><i class="fa-brands fa-css3-alt fa-2xl" title="CSS"></td>
+                            <td><i class="fa-brands fa-js fa-2xl" title="JavaScript"></td>
+                            <td><i class="fa-brands fa-linux fa-2xl" title="Linux"></i></td>
+                        </tr>
+                        <tr>
+                            <td><figcaption style="font-size: x-small;"><sub>HTML5</sub></figcaption></td>
+                            <td><figcaption style="font-size: x-small;"><sub>CSS</sub></figcaption></td>
+                            <td><figcaption style="font-size: x-small;"><sub>JavaScript</sub></figcaption></td>
+                            <td><figcaption style="font-size: x-small;"><sub>Linux</sub></figcaption></td>
+                        </tr>
+                        <tr><td></td></tr>
+                        <tr>
+                            <td><i class="fa-solid fa-shield-halved fa-2xl" title="Cybersecurity Frameworks"></i></td>
+                        </tr>
+                        <tr>
+                            <td><figcaption style="font-size: x-small;"><sub>NST CSF</sub></figcaption></td>
+                        </tr>
+                    </table>
+                <h3 style="text-align: center;">Soft Skills</h3>
+                    <table>
+                    <!--Table for soft skills I wish to highlight-->
+                        <tr>
+                            <td>Adaptability</td>
+                            <td>Collaboration</td>
+                        </tr>
+                        <tr>
+                            <td>Innovation</td>
+                            <td>Problem Solving</td>
+                        </tr>
+                        <tr>
+                            <td>Detail Oriented</td>
+                            <td>Proactive</td>
+                        </tr>
+                        <tr>
+                            <td>Teamwork</td>
+                            <td>Rapport Building</td>
+                        </tr>
+                        <tr>
+                            <td>Technical Writing</td>
+                            <td>Communication</td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="box right">
+            <!--Right hand column that houses an iframe for navigating to projects-->
+                <iframe name="iframe_a" width="100%" height="100%" src="statement.html" title="iframe linked to internal web pages"></iframe>
+            </div>
+        </div>
+        <footer>&copy; Copyright 2023 Starr Gibson. All rights reserved.</footer>
+    </body>
 </html>
