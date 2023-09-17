@@ -1,0 +1,49 @@
+/* Styling for color change on hover over icons */
+.fa-at:hover {
+    color: #99B5D2;
+}
+.fa-linkedin:hover {
+    color: #0077B5;
+}
+.fa-salesforce:hover {
+    color: #1798c1;
+}
+.fa-square-github:hover {
+    color:#99B5D2;
+}
+.fa-user:hover {
+    color: #0056D2;
+}
+.fa-cloud-arrow-down:hover {
+    color: #99B5D2;
+}
+.fa-html5:hover {
+    color: #e44d26;
+}
+.fa-js:hover {
+    color: #f0db4f;
+}
+.fa-css3-alt:hover { 
+    color: #264de4;
+}
+.fa-linux:hover {
+    color: dodgerblue;
+}
+.fa-file:hover {
+    color: #99B5D2;
+}
+.fa-shield-halved:hover {
+    color: red;
+}
+.fa-server:hover {
+    color: #99B5D2;
+}
+.fa-arrow-up-right-from-square:hover {
+    color: #99B5D2;
+}
+.fa-rocket:hover {
+    color: orangered;
+}
+.fa-computer:hover {
+    color: orangered;
+}
