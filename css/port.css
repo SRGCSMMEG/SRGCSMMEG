@@ -55,6 +55,11 @@ p.ind {
       width: 100%;
     }
 }
+@media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+}
 /* Defines the about me id so the left column looks different than the right */
 #aboutme {
     background-color: #99B5D2;
