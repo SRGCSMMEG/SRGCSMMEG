@@ -121,3 +121,7 @@ table {
     width: 80%;
     border: 2px solid grey;
 }
+code {
+    background-color: grey;
+    font-family: monospace;
+}
