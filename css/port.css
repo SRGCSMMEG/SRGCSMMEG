@@ -114,9 +114,6 @@ table {
     width: 100%;
     text-align: center;
 }
-td.fa-caret-right {
-    text-align: right;
-}
 .center {
     display: block;
     margin-left: auto;
