@@ -114,8 +114,8 @@ table {
     width: 100%;
     text-align: center;
 }
-td {
-    text-align: left;
+td.fa-caret-right {
+    text-align: right;
 }
 .center {
     display: block;
