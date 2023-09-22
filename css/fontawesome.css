@@ -47,3 +47,9 @@
 .fa-computer:hover {
     color: orangered;
 }
+.fa-network-wired:hover {
+    color: yellowgreen;
+}
+.fa-database:hover {
+    color: firebrick;
+}
