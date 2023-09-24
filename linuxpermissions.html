@@ -1,77 +1,64 @@
-<!DOCTYPE html>
-<!--Required element for HTML files-->
-<html lang="en-US">
-<!--Language and country listed for search engines-->
-    <head>
-    <!--Container for Metadata-->
-        <title>Personal Statement</title>  
-        <!--Displays on browser tab. This is a required element-->
-        <meta charset="UTF-8">
-        <!--Metadata defining character set used-->
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <!--Metadata indicating coding languages used-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--Provides scalability for users viewing on different devices-->
-        <meta name="description" content="Professional statement for profile">
-        <!--Metadata describing the website for the assistance of search engines-->
-        <meta name="author" content="Starr Rhiannon Gibson">
-        <!--Metadata providing authorship for the file-->
-        <link rel="stylesheet" href="css/port.css">
-        <link rel="stylesheet" href="css/fontawesome.css">
-        <!--External CSS files defining aesthetic of website-->
-        <script src="https://kit.fontawesome.com/427e1b2647.js" crossorigin="anonymous"></script>
-        <!--My unique Font Awesome Kit-->  
-    </head>
-    <body>
-    <!--Container for all visible elements-->
-        <nav>
-            <div id="title" style="padding: 15px">Skills Demonstrations</div>
-            <ul>
-                <li><a href="statement.html" title="Professional Statement"><i class="fa-solid fa-file fa-2xl"></i></a></li>
-                <li><a href="starrship.html" title="StarrShip"><i class="fa-solid fa-rocket fa-2xl"></i></a></li>
-                <li><a href="securityaudit.html" title="Security Audit" target="iframe_a"><i class="fa-solid fa-shield-halved fa-2xl"></i></a></li>
-                <li><a href="networkanalysis.html" title="Network Analysis" target="iframe_a"><i class="fa-solid fa-server fa-2xl"></i></a></li>
-                <li><a href="linuxpermissions.html" title="Linux Permissions" class="active" style="color: black;" target="iframe_a"><i class="fa-brands fa-linux fa-2xl"></i></a></li>
-                <!--<li><a href="mylab.html" title="My Lab" target="iframe_a"><i class="fa-solid fa-computer fa-2xl"></i></a></li>
-               -->
-            </ul>
-        </nav>
-        <div style="float: right; padding-top: 20px; padding-right: 20px; a:visited { color: grey}"><!--Opens the window in a new window; helpful to any user trying to view the page outside of the ifram on the index page-->
-            <a href="linuxpermissions.html" title="open in new window" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square fa-2xl" style="color: grey"></i></a>
-          </div>
-          <div style="padding: 15px">
-            <h2 style="text-align: center; color: #282f37">Linux Permissions</h2>
-            <h3 style="text-align: center; color: #99B5D2;">Skills: Operating Systems, Linux, Virtual Machines</h3>
-            <h4 style="text-align: center; color: black;">Scenario</h4>
-              <blockquote style="text-align: justify; background-color:#D1B4A3">
-                <p class="ind">Using a Linux lab with a fictional organization, I will review the file permissions for certain files and directories in the <code>projects</code> directory. The permissions will not adhere to the level of authorization required by the organization. Checking and updating permissions will help keep the system secure and will require the following tasks:</p>
-              </blockquote>
-            <h2>Check file and directory details</h2>
-              <p class="ind">First I reviewed the current state of permissions in the <code>projects</code> directory. The below screenshot shows the command I used on the first line and then the output as a result of the command. I used the <code>ls</code> command and the <code>-la</code> option to display a listing of file contents that also returns hidden files. The output indicates there is one directory named <code>drafts</code>, one hidden file named <code>.project_x.txt</code> and four other project files. The 10-character string in the first column indicates the permissions for the directory and each file.</p>
-                <img src="images/linuxcapture1.png" class="linux" alt="image of a linux command terminal with current directory details">
-                <figcaption>Figure 1: Current directory permissions</figcaption>
-            <h2>Describe the permissions string</h2>
-              <p class="ind">The permissions string is 10 characters long with the first character indicating the file type. if the character is a <code>d</code>, it is a directory. If the character is a hyphen (<code>-</code>), it's a regular file. The remaining characters indicate the permissions for the 3 distinct owner types: user, group, and other. The <strong>user</strong> type is the owner of the file, and the <strong>group</strong> type is a group the user belongs to in the company's organization. Anyone with access to the system that is not part of the group or the user belongs to the <strong>other</strong> category.</p>
-              <p class="ind">Each owner type has 3 permissions turned on or off. The first being read, indicated by an <code>r</code>, meaning the owner type can read the file contents. The second is write, indicated by a <code>w</code>, meaning the owner type can make modifications to the file contents or add new files to a directory. The last permission is execute, indicated by an <code>x</code>, meaning the owner type can execute the file if it's a program or access a directory. If an owner type has a permission turned off, it will be indicated by a hyphen (<code>-</code>) instead of a letter.</p>
-              <p class="ind">Using the Linux lab for an example, the line <code>-rw-rw-r-- 1 researcher2 research_team 46 Aug 30 22:04 project_t.txt</code> is in reference to the file <code>project_t.txt</code>. I know it's a regular file because the first character is a hyphen (<code>-</code>). The <strong>user</strong> permissions are the 2nd, 3rd, and 4th characters (<code>rw-</code>). The <strong>group</strong> permissions are the 5th, 6th, and 7th characters (<code>rw-</code>) and match the permissions of the <strong>user</strong>. The <strong>other</strong> permissions are the last 3 characters and the <code>r--</code> indicate anyone not in the <strong>group</strong> or the <strong>user</strong> types can only read the file.</p>
-                <img src="images/linuxcapture2.png" class="linux" alt="image of a linux commmand terminal">
-                <figcaption>Figure 2: Permissions string</figcaption>
-            <h2>Change file permissions</h2>
-              <p class="ind">The organization determined the <strong>other</strong> owner type shouldn't have write access to any files. Upon review of the current permissions, I determined <code>project_k.txt</code> must have the write access removed for <strong>other</strong>.</p>
-              <p class="ind">Using the <code>chmod</code> command to change permissions, I indicated two arguments: the first being the permissions to be changed (in this case <code>o-w</code> for <strong>other</strong> owner type minus write permissions). The second argument specifies the file to be modified, which is <code>project_k.txt</code>. To confirm the updates had been made, I used <code>ls -la</code> to output the files and directory list with permissions again.</p>
-                <img src="images/linuxcapture3.png" class="linux" alt="image of a linux command terminal changing permissions">
-                <figcaption>Figure 3: Changing permissions with <code>chmod</code></figcaption>
-            <h2>Change file permissions on a hidden file</h2>
-              <p class="ind">The hidden file <code>.project_x.txt</code> had been archived and the organization did not want anyone to continue to have write access to this project. Reviewing the permissions, I determined both the <strong>user</strong> and <strong>group</strong> owner types still retained write permissions and the <strong>group</strong> did not have read permissions.</p>
-              <p class="ind">While I could use minus (<code>-</code>) and plus (<code>+</code>) to remove and add permissions for each owner type as needed, I decided to use equal (<code>=</code>) to overwrite the current permissions with the correct permissions. This allowed me to complete the changes to the <strong>group</strong> type without using two separate modification arguments (<code>g-w,g+r</code>). Either way works, but the equal made the command cleaner. I used the <code>chmod</code> command with the arguments <code>u=r,g=r</code> and <code>.project_x.txt</code>. I then used the command <code>ls -la</code> to review the permissions and confirm my changes had been made.</p>
-                <img src="images/linuxcapture4.png" class="linux" alt="image of a linux command terminal displaying hidden files">
-                <figcaption>Figure 4: Changing permissions on a hidden file</figcaption>
-            <h2>Change directory permissions</h2>
-              <p class="ind">The organization wants to restrict access to the <code>drafts</code> directory and its contents to only the owner, <code>researcher2</code>. The current permissions indicate the <strong>group</strong> has execute permissions, meaning other users in the same group as the owner <code>researcher2</code> have access to the <code>drafts</code> directory and its files. Because the user <code>researcher2</code> has all appropriate permissions, I only needed to use the <code>chmod</code> command to remove the <strong>group</strong> owner type’s permission.</p>
-                <img src="images/linuxcapture5.png" class="linux" alt="image of a linux command terminal changing directory permissions">
-                <figcaption>Figure 5: Changing directory permissions</figcaption>
-            <h2>Summary</h2>
-              <p class="ind">In a scenario where a fictional organization needed a review of the level of authorizations of files and directories in the <code>projects</code> directory to ensure they met requirements set by the organization’s standards, I needed to modify multiple permissions. The first step was using <code>ls -la</code> to check the current permissions for the directory. I then used the <code>chmod</code> command multiple times to change the permissions on files and directories in the <code>projects</code> directory to match the appropriate permissions needed.</p>
-          </div> 
-        </body>
-      </html>
+<!DOCTYPE html><!--Required element for HTML files-->
+<html lang="en-US"><!--Language and country listed for search engines-->
+  <head><!--Container for Metadata-->
+    <title>Linux Permissions</title><!--Displays on browser tab. This is a required element-->
+    <meta charset="UTF-8"><!--Metadata defining character set used-->
+    <meta name="keywords" content="HTML, CSS, JavaScript"><!--Metadata indicating coding languages used-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Provides scalability for users viewing on different devices-->
+    <meta name="description" content="Professional statement for profile"><!--Metadata describing the website for the assistance of search engines-->
+    <meta name="author" content="Starr Rhiannon Gibson"><!--Metadata providing authorship for the file-->
+    <link rel="stylesheet" href="css/port.css">
+    <link rel="stylesheet" href="css/fontawesome.css"><!--External CSS files defining aesthetic of website-->
+    <script src="https://kit.fontawesome.com/427e1b2647.js" crossorigin="anonymous"></script><!--My unique Font Awesome Kit-->  
+  </head>
+  <body><!--Container for all visible elements-->
+    <nav>
+      <div id="title" style="padding: 15px">Skills Demonstrations</div>
+        <ul>
+          <li><a href="statement.html" title="Professional Statement"><i class="fa-solid fa-file fa-2xl"></i></a></li>
+          <li><a href="starrship.html" title="StarrShip"><i class="fa-solid fa-rocket fa-2xl"></i></a></li>
+          <li><a href="securityaudit.html" title="Security Audit" target="iframe_a"><i class="fa-solid fa-shield-halved fa-2xl"></i></a></li>
+          <li><a href="networkanalysis.html" title="Network Analysis" target="iframe_a"><i class="fa-solid fa-server fa-2xl"></i></a></li>
+          <li><a href="linuxpermissions.html" title="Linux Permissions" class="active" style="color: black;" target="iframe_a"><i class="fa-brands fa-linux fa-2xl"></i></a></li>
+          <!--<li><a href="mylab.html" title="My Lab" target="iframe_a"><i class="fa-solid fa-computer fa-2xl"></i></a></li>-->
+        </ul>
+    </nav>
+    <div style="float: right; padding-top: 20px; padding-right: 20px; a:visited { color: grey}"><!--Opens the window in a new window; helpful to any user trying to view the page outside of the ifram on the index page-->
+      <a href="linuxpermissions.html" title="open in new window" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square fa-2xl" style="color: grey"></i></a>
+    </div>
+    <div style="padding: 15px">
+      <h2 style="text-align: center; color: #282f37">Linux Permissions</h2>
+      <h3 style="text-align: center; color: #99B5D2;">Skills: Operating Systems, Linux, Virtual Machines</h3>
+      <h4 style="text-align: center; color: black;">Scenario</h4>
+        <blockquote style="text-align: justify; background-color:#D1B4A3">
+          <p class="ind">Using a Linux lab with a fictional organization, I will review the file permissions for certain files and directories in the <code>projects</code> directory. The permissions will not adhere to the level of authorization required by the organization. Checking and updating permissions will help keep the system secure and will require the following tasks:</p>
+        </blockquote>
+      <h2>Check file and directory details</h2>
+        <p class="ind">First I reviewed the current state of permissions in the <code>projects</code> directory. The below screenshot shows the command I used on the first line and then the output as a result of the command. I used the <code>ls</code> command and the <code>-la</code> option to display a listing of file contents that also returns hidden files. The output indicates there is one directory named <code>drafts</code>, one hidden file named <code>.project_x.txt</code> and four other project files. The 10-character string in the first column indicates the permissions for the directory and each file.</p>
+          <img src="images/linuxcapture1.png" class="linux" alt="image of a linux command terminal with current directory details">
+          <figcaption>Figure 1: Current directory permissions</figcaption>
+      <h2>Describe the permissions string</h2>
+        <p class="ind">The permissions string is 10 characters long with the first character indicating the file type. if the character is a <code>d</code>, it is a directory. If the character is a hyphen (<code>-</code>), it's a regular file. The remaining characters indicate the permissions for the 3 distinct owner types: user, group, and other. The <strong>user</strong> type is the owner of the file, and the <strong>group</strong> type is a group the user belongs to in the company's organization. Anyone with access to the system that is not part of the group or the user belongs to the <strong>other</strong> category.</p>
+        <p class="ind">Each owner type has 3 permissions turned on or off. The first being read, indicated by an <code>r</code>, meaning the owner type can read the file contents. The second is write, indicated by a <code>w</code>, meaning the owner type can make modifications to the file contents or add new files to a directory. The last permission is execute, indicated by an <code>x</code>, meaning the owner type can execute the file if it's a program or access a directory. If an owner type has a permission turned off, it will be indicated by a hyphen (<code>-</code>) instead of a letter.</p>
+        <p class="ind">Using the Linux lab for an example, the line <code>-rw-rw-r-- 1 researcher2 research_team 46 Aug 30 22:04 project_t.txt</code> is in reference to the file <code>project_t.txt</code>. I know it's a regular file because the first character is a hyphen (<code>-</code>). The <strong>user</strong> permissions are the 2nd, 3rd, and 4th characters (<code>rw-</code>). The <strong>group</strong> permissions are the 5th, 6th, and 7th characters (<code>rw-</code>) and match the permissions of the <strong>user</strong>. The <strong>other</strong> permissions are the last 3 characters and the <code>r--</code> indicate anyone not in the <strong>group</strong> or the <strong>user</strong> types can only read the file.</p>
+          <img src="images/linuxcapture2.png" class="linux" alt="image of a linux commmand terminal">
+          <figcaption>Figure 2: Permissions string</figcaption>
+      <h2>Change file permissions</h2>
+        <p class="ind">The organization determined the <strong>other</strong> owner type shouldn't have write access to any files. Upon review of the current permissions, I determined <code>project_k.txt</code> must have the write access removed for <strong>other</strong>.</p>
+        <p class="ind">Using the <code>chmod</code> command to change permissions, I indicated two arguments: the first being the permissions to be changed (in this case <code>o-w</code> for <strong>other</strong> owner type minus write permissions). The second argument specifies the file to be modified, which is <code>project_k.txt</code>. To confirm the updates had been made, I used <code>ls -la</code> to output the files and directory list with permissions again.</p>
+          <img src="images/linuxcapture3.png" class="linux" alt="image of a linux command terminal changing permissions">
+          <figcaption>Figure 3: Changing permissions with <code>chmod</code></figcaption>
+      <h2>Change file permissions on a hidden file</h2>
+        <p class="ind">The hidden file <code>.project_x.txt</code> had been archived and the organization did not want anyone to continue to have write access to this project. Reviewing the permissions, I determined both the <strong>user</strong> and <strong>group</strong> owner types still retained write permissions and the <strong>group</strong> did not have read permissions.</p>
+        <p class="ind">While I could use minus (<code>-</code>) and plus (<code>+</code>) to remove and add permissions for each owner type as needed, I decided to use equal (<code>=</code>) to overwrite the current permissions with the correct permissions. This allowed me to complete the changes to the <strong>group</strong> type without using two separate modification arguments (<code>g-w,g+r</code>). Either way works, but the equal made the command cleaner. I used the <code>chmod</code> command with the arguments <code>u=r,g=r</code> and <code>.project_x.txt</code>. I then used the command <code>ls -la</code> to review the permissions and confirm my changes had been made.</p>
+          <img src="images/linuxcapture4.png" class="linux" alt="image of a linux command terminal displaying hidden files">
+          <figcaption>Figure 4: Changing permissions on a hidden file</figcaption>
+      <h2>Change directory permissions</h2>
+        <p class="ind">The organization wants to restrict access to the <code>drafts</code> directory and its contents to only the owner, <code>researcher2</code>. The current permissions indicate the <strong>group</strong> has execute permissions, meaning other users in the same group as the owner <code>researcher2</code> have access to the <code>drafts</code> directory and its files. Because the user <code>researcher2</code> has all appropriate permissions, I only needed to use the <code>chmod</code> command to remove the <strong>group</strong> owner type’s permission.</p>
+          <img src="images/linuxcapture5.png" class="linux" alt="image of a linux command terminal changing directory permissions">
+          <figcaption>Figure 5: Changing directory permissions</figcaption>
+      <h2>Summary</h2>
+        <p class="ind">In a scenario where a fictional organization needed a review of the level of authorizations of files and directories in the <code>projects</code> directory to ensure they met requirements set by the organization’s standards, I needed to modify multiple permissions. The first step was using <code>ls -la</code> to check the current permissions for the directory. I then used the <code>chmod</code> command multiple times to change the permissions on files and directories in the <code>projects</code> directory to match the appropriate permissions needed.</p>
+    </div> 
+  </body>
+</html>
