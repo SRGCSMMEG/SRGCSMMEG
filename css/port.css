@@ -122,6 +122,9 @@ table {
     border: 2px solid grey;
 }
 code {
-    background-color: grey;
+    background-color: lightgrey;
     font-family: monospace;
+}
+.linux {
+    width: 60%;
 }
